@@ -38,3 +38,9 @@ if (student) {
 else {
     console.log('Student not found!')
 }
+
+module.exports = {
+    getStudentStatus (id) {
+        
+    }
+}

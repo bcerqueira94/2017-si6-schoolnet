@@ -13,7 +13,16 @@ app.set('views', path.join(__dirname, 'public'))
 app.set('view engine','ejs')
 
 app.get('/', (request, response) => {
-    response.render('index')
+    response.render('index', {student:null, submitted:false})
+})
+
+app.get('/status', (request, response) => {
+    console.log('studentId' + request.query.studentId)
+    response.render('index', { student:null, submitted:true })
+})
+
+app.get('/status', (request, response) => {
+    response.json(request.query)
 })
 
 app.listen(port, () => {
